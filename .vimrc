@@ -10,7 +10,6 @@ set nu " turn on line numbers
 set backupdir=/tmp// " remove myfile.txt~ (backup) files from working directory
 set directory=/tmp// " remove .swp (unsaved changes) files from working directory
 set undodir=/tmp// " remove .un~ (undo file) files from working directory
-cd /Users/ed/GeekyStuff/C++/Competitive-Programming " nav to cp folder
 
 let g:netrw_sort_by="time" " make file manager sort by time
 let g:netrw_sort_direction="reverse" " make file manager sort in reverse
