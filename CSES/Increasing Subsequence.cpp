@@ -14,6 +14,18 @@ int slow_lis(vector<int> a){
 	return ret;
 }
 
+int fast_lis(vector<int> a){
+	vector<int> dp;
+	for (int i : a) {
+		int pos = lower_bound(dp.begin(), dp.end(), i) - dp.begin();
+		if (pos == dp.size())  // we can have a new, longer increasing subsequence!
+			dp.push_back(i);
+		else  // oh ok, at least we can make the ending element smaller
+			dp[pos] = i;
+	}
+	return dp.size();
+}
+
 int main(){
 	cin>>n;
 	for(int i=0;i<n;i++){
@@ -21,5 +33,5 @@ int main(){
 		a.push_back(x);
 	}
 
-	cout<<slow_lis(a);
+	cout<<fast_lis(a);
 }
